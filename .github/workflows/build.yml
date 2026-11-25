@@ -45,6 +45,7 @@ jobs:
           RESP=$(curl -s -F "file=@${{ steps.apk.outputs.path }}" https://upload.gofile.io/uploadFile)
           echo "$RESP" > gofile.json
           PAGE=$(echo "$RESP" | jq -r '.data.downloadPage')
+          echo "Gofile: $PAGE"
           echo "page=$PAGE" >> "$GITHUB_OUTPUT"
           echo "### AIMP clone build" >> "$GITHUB_STEP_SUMMARY"
           echo "Download: $PAGE" >> "$GITHUB_STEP_SUMMARY"
