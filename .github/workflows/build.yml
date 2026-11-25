@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+env:
+  ANDROID_HOME: /usr/local/lib/android/sdk
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,12 +20,13 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install SDK platform and build tools
+      - name: Accept SDK licenses and install components
+        shell: bash
         run: |
-          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+          SDKMANAGER=$(find "$ANDROID_HOME/cmdline-tools" -name sdkmanager -type f | head -1)
+          echo "sdkmanager=$SDKMANAGER"
+          yes | "$SDKMANAGER" --licenses > /dev/null || true
+          "$SDKMANAGER" "platforms;android-35" "build-tools;35.0.0" "platform-tools"
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v3
@@ -36,6 +40,7 @@ jobs:
 
       - name: Upload to gofile
         id: gofile
+        shell: bash
         run: |
           RESP=$(curl -s -F "file=@${{ steps.apk.outputs.path }}" https://upload.gofile.io/uploadFile)
           echo "$RESP" > gofile.json
