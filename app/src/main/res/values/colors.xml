@@ -1,0 +1,9 @@
+<resources>
+    <color name="aimp_orange">#FFFF8800</color>
+    <color name="aimp_bg">#FF1E1E1E</color>
+    <color name="aimp_surface">#FF2A2A2A</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="lyric_current">#FFFF8800</color>
+    <color name="lyric_normal">#FFFFFFFF</color>
+    <color name="lyric_dim">#80FFFFFF</color>
+</resources>

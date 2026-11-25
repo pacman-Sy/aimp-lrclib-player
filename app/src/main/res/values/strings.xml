@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AIMP</string>
+    <string name="tab_library">Library</string>
+    <string name="tab_player">Player</string>
+    <string name="tab_lyrics">Lyrics</string>
+    <string name="tab_playlists">Playlists</string>
+    <string name="lyrics_loading">Loading lyrics…</string>
+    <string name="lyrics_not_found">No lyrics found on LRCLib</string>
+    <string name="lyrics_error">Failed to fetch lyrics</string>
+    <string name="auto_lyrics">Auto lyrics (LRCLib)</string>
+</resources>

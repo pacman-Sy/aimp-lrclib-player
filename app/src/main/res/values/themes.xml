@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.AIMP" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/aimp_orange</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/aimp_bg</item>
+        <item name="android:statusBarColor">@color/aimp_bg</item>
+        <item name="colorSurface">@color/aimp_surface</item>
+    </style>
+</resources>
