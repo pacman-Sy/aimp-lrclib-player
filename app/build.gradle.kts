@@ -9,7 +9,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.ollie.aimpclone"
+        applicationId = "com.pacmansy.aimpclone"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
